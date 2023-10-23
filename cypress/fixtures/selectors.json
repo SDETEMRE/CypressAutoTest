@@ -11,7 +11,7 @@
   "emailBox":"[data-cy='passwordless-login-email__form--email']",
   "emailContinueBtn": "[data-cy='passwordless-login-email__form--submit']",
   "verificationBox": "[data-cy='passwordless-login_code']",
-  "verificationSubmitBtn": "[type='submit']",
+  "verificationSubmitBtn": "[data-cy='passwordless-login_code-button']",
   "confirmAppointmentBtn": "[data-cy='booking-review__confirm-btn']",
   "firstName": "[data-cy = 'passwordless-new-account__form--first-name']",
   "lastName": "[data-cy = 'passwordless-new-account__form--last-name']",

@@ -14,8 +14,7 @@ describe('MakeAnAppointment', () => {
   })
   it('onTheHomePage', () => {
     cy.visit('/');
-    cy.get(data.cookiePpup).click();
-    
+    cy.get(data.cookiePpup).click();    
   })
   it('search for QA Assessment',()=>{
     cy.get(data.nameOrSpecialty).should('exist').type("QA Assessment");
@@ -46,7 +45,8 @@ describe('MakeAnAppointment', () => {
   it('Fill in your email to continue',()=>{
     cy.get(data.emailBox).type("b67ac7bc-9f13-4aed-ba97-2b09a48c62f7@mailslurp.com");
     cy.get(data.emailContinueBtn).click();
-    cy.wait(5000);
+    cy.get(data.verificationBox).should('be.visible');
+    cy.wait(3000);
   })
   it('insert the OTP', () => {
     cy.waitForLatestEmail("b67ac7bc-9f13-4aed-ba97-2b09a48c62f7").then((email) => {
@@ -56,8 +56,8 @@ describe('MakeAnAppointment', () => {
     const otp = doc.querySelector(".body td:nth-of-type(1) td:nth-of-type(1) td .color--highlight-main").textContent;
     otpCode = otp.trim();
     cy.log(otpCode);   
-    cy.get("[data-cy='passwordless-login_code']").type(otpCode);
-    cy.get("[type='submit']").click();          
+    cy.get(data.verificationBox).type(otpCode);
+    cy.get(data.verificationSubmitBtn).click();          
   });
 })
   it('Confirm Appointment',()=>{

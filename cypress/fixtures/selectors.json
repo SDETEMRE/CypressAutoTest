@@ -1,0 +1,23 @@
+{
+  "cookiePpup": "[data-cy='cookie-policy__agree']",
+  "nameOrSpecialty": "[name = 'Name or specialty']",
+  "selectFound": "button[data-cy = 'qa-assessment']",
+  "makeAnAppointment": "[data-cy='hp-detail__book-booking-widget-cta'] > .button-content",
+  "myOffice": "[for='site-652d7d6f94db78b539fc9857']",
+  "newPatient": "[for='is-new-patient-true']",
+  "consultation": "[for = 'motive-652d7d6f94db78b539fc985b']",
+  "firstPossibleHour": "[data-cy ^= 'availability-results__day-slots__slot']",
+  "continueBtn" : "[data-cy='booking-review__next-btn'] > .button-content",
+  "emailBox":"[data-cy='passwordless-login-email__form--email']",
+  "emailContinueBtn": "[data-cy='passwordless-login-email__form--submit']",
+  "verificationBox": "[data-cy='passwordless-login_code']",
+  "verificationSubmitBtn": "[type='submit']",
+  "confirmAppointmentBtn": "[data-cy='booking-review__confirm-btn']",
+  "firstName": "[data-cy = 'passwordless-new-account__form--first-name']",
+  "lastName": "[data-cy = 'passwordless-new-account__form--last-name']",
+  "dateOfBirth": "[data-cy = 'partial-date-input']",
+  "phoneNumber": ".phone-number__input.rosa-input",
+  "acceptAndContBtn": "[data-cy = 'passwordless-new-account__form--submit']",
+  "confirmAppBtn": "[data-cy = 'booking-review__confirm-btn']",
+  "confirmSuccessText": "[data-cy='booking-confirmation__summary-title']"
+}

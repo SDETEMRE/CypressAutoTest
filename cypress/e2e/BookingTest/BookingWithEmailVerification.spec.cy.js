@@ -43,13 +43,14 @@ describe('MakeAnAppointment', () => {
     cy.get(data.continueBtn).click();
   })
   it('Fill in your email to continue',()=>{
-    cy.get(data.emailBox).type("b67ac7bc-9f13-4aed-ba97-2b09a48c62f7@mailslurp.com");
+    cy.get(data.emailBox).type(Cypress.env('emailAddress'));
     cy.get(data.emailContinueBtn).click();
     cy.get(data.verificationBox).should('be.visible');
     cy.wait(3000);
   })
+
   it('insert the OTP', () => {
-    cy.waitForLatestEmail("b67ac7bc-9f13-4aed-ba97-2b09a48c62f7").then((email) => {
+    cy.waitForLatestEmail(Cypress.env('inboxID')).then((email) => {
     emailBody = email.body;
     const parser = new DOMParser();
     const doc = parser.parseFromString(emailBody, 'text/html');
@@ -60,6 +61,23 @@ describe('MakeAnAppointment', () => {
     cy.get(data.verificationSubmitBtn).click();          
   });
 })
+
+  xit('Fill firstName',()=>{
+    cy.get(data.firstName).should('exist').type("Emre");
+  })
+  xit('Fill lastName',()=>{
+    cy.get(data.lastName).should('exist').type("Test")
+  })
+  xit('Fill dateOfBirth',()=>{
+    cy.get(data.dateOfBirth).should('exist').type("02/11/1987")
+  })
+  xit('Fill phoneNumber',()=>{
+    cy.get(data.phoneNumber).should('exist').type("55555555")
+  })
+  xit('Click Accept and Continue',()=>{
+    cy.get(data.acceptAndContBtn).should('exist').click();
+  })
+
   it('Confirm Appointment',()=>{
     cy.get(data.confirmAppointmentBtn).click();
 })

@@ -24,7 +24,7 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 const{MailSlurp} = require('mailslurp-client')
-const mailslurp = new MailSlurp({apiKey: "ca8a179a4f9dcac072b8bf49a3f0a0b06d5616ad764ad97f819869a9bc45c0a4"});
+const mailslurp = new MailSlurp({apiKey: Cypress.env('api_key')});
 
 Cypress.Commands.add('waitForLatestEmail',(inboxId)=>{
     const timeoutMillis = 3000;
